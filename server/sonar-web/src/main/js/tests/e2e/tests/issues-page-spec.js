@@ -50,10 +50,10 @@ casper.test.begin(testName('Base'), function (test) {
 
           // Workspace header
           test.assertSelectorContains('#issues-total', '4623');
-          test.assertExists('.js-issues-prev');
-          test.assertExists('.js-issues-next');
-          test.assertExists('#issues-reload');
-          test.assertExists('#issues-bulk-change');
+          test.assertExists('.js-prev');
+          test.assertExists('.js-next');
+          test.assertExists('.js-reload');
+          test.assertExists('.js-bulk-change');
         });
       })
 
