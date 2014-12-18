@@ -18,7 +18,7 @@ define([
     clearQuery: function (query) {
       var q = {};
       Object.keys(query).forEach(function (key) {
-        if (query[key] != null) {
+        if (query[key]) {
           q[key] = query[key];
         }
       });

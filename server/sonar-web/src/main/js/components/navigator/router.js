@@ -6,6 +6,7 @@ define([
     routeSeparator: '|',
 
     routes: {
+      '': 'index',
       ':query': 'index'
     },
 

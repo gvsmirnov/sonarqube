@@ -37,8 +37,6 @@ define [
 ) ->
 
   class extends FacetsView
-    className: 'issues-facets-list'
-
 
     getItemView: (model) ->
       switch model.get 'property'

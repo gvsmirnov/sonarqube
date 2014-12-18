@@ -5,6 +5,8 @@ define([
   var $ = jQuery;
 
   return Marionette.ItemView.extend({
+    className: 'search-navigator-facet-box',
+
     modelEvents: function () {
       return {
         'change': 'render'
@@ -13,18 +15,19 @@ define([
 
     events: function () {
       return {
-        'click .js-issues-facet-toggle': 'toggle',
-        'click .js-issues-facet': 'toggleFacet'
+        'click .js-facet-toggle': 'toggle',
+        'click .js-facet': 'toggleFacet'
       };
     },
 
     onRender: function () {
-      this.$el.toggleClass('issues-facet-box-collapsed', !this.model.get('enabled'));
-      var property = this.model.get('property'),
+      this.$el.toggleClass('search-navigator-facet-box-collapsed', !this.model.get('enabled'));
+      var that = this,
+          property = this.model.get('property'),
           value = this.options.app.state.get('query')[property];
       if (typeof value === 'string') {
         value.split(',').forEach(function (s) {
-          var facet = this.$('.js-issues-facet').filter('[data-value="' + s + '"]');
+          var facet = that.$('.js-facet').filter('[data-value="' + s + '"]');
           if (facet.length > 0) {
             facet.addClass('active');
           }
@@ -37,7 +40,7 @@ define([
     },
 
     getValue: function () {
-      return this.$('.js-issues-facet.active').map(function () {
+      return this.$('.js-facet.active').map(function () {
         return $(this).data('value');
       }).get().join();
     },

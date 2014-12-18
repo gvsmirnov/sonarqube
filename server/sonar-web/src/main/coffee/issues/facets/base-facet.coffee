@@ -7,5 +7,4 @@ define [
 ) ->
 
   class extends BaseFacet
-    className: 'issues-facet-box'
     template: Templates['issues-base-facet']

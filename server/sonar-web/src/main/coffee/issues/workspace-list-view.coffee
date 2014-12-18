@@ -21,7 +21,7 @@ define [
     template: Templates['issues-workspace-list']
     componentTemplate: Templates['issues-workspace-list-component']
     itemView: IssueView
-    itemViewContainer: '.js-issues-list'
+    itemViewContainer: '.js-list'
     emptyView: EmptyView
 
 
